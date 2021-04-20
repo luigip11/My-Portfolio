@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Weekly assignment 11</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/moon.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>INFO 3402: WA11</h3>
+					<p style="color:#CFB87C; font-weight:bold;">D Clark</p>
+					<p style="color:#565A5C">Weekly assignment 11</h5>
+				</section>
+				
+
+				<section>
+					<section>
+						<h2>Visualization 1</h2>
+						<div id="vis-car"></div>
+						<script type="text/javascript">
+						var spec = {
+							"width": 500,
+							"height": 300,
+							"data": {
+								"url": "https://vega.github.io/vega-datasets/data/cars.json"
+							},
+							"mark": {
+									"type": "circle",
+									"size": 60,
+							},
+							"encoding": {
+								"x": {
+									"field": "Acceleration",
+									"type": "quantitative",
+								},
+								"y": {
+									"field": "Weight_in_lbs",
+									"type": "quantitative"
+								},
+							}
+						};
+						var opt = {"renderer": "canvas", "actions": false};
+						vegaEmbed("#vis-car", spec, opt);
+						</script>
+						<p>Most cars of this era are heavy and slow, with the minimum weight being around 2000lb
+						</section>
+						<section>
+						<p>Code:</p>
+						<pre><code data-trim class='js'>
+												var spec = {
+							"width": 500,
+							"height": 300,
+							"data": {
+								"url": "https://vega.github.io/vega-datasets/data/cars.json"
+							},
+							"mark": {
+									"type": "circle",
+									"size": 60,
+							},
+							"encoding": {
+								"x": {
+									"field": "Acceleration",
+									"type": "quantitative",
+								},
+								"y": {
+									"field": "Weight_in_lbs",
+									"type": "quantitative"
+								},
+							}
+						</code></pre>
+						</section>
+
+				</section>
+
+				<!-- Start of a vertical slide -->
+<section>
+					<section>
+						<h2>Visualization 2</h2>
+						<div id="vis-cars-lay"></div>
+						<script type="text/javascript">
+						var spec = {
+							"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+							"width": 500,
+							"height": 300,
+							"data": {
+								"url": "https://vega.github.io/vega-datasets/data/cars.json"
+							},
+							"encoding": {
+								"y": {
+									"field": "Cylinders",
+									"type": "nominal"
+								},
+								"x": {
+									"aggregate": "count", 
+									"title": "Number of Cars",
+									"type": "quantitative"
+								},
+								"color": {
+									"field": "Origin",
+									"type": "nominal"
+								}
+							},
+							"layer":[{
+								"mark": "bar"
+							},{
+								"mark": {
+									"type": "text",
+									"align": "left",
+									"baseline": "middle",
+									"dx": 5
+								},
+								"encoding": {
+									"text": {
+										"aggregate": "count",
+										"type": "quantitative"
+									}
+								}
+							}],
+						};
+						var opt = {"renderer": "canvas", "actions": false};
+						vegaEmbed("#vis-cars-lay", spec, opt);
+						</script>
+						<p>Clearly, the most popular cylinder configuration for this era was the 4-banger. Japan and Europe had a few 3 and 5 cylinder options, respectively, while the US dominates V6 and V8 engines, likely due to the US tenacity for larger and thus more powerful cars.
+						</section>
+						<section>
+						<p>Code:</p>
+						<pre><code data-trim class='js'>
+							"encoding": {
+								"y": {
+									"field": "Cylinders",
+									"type": "nominal"
+								},
+								"x": {
+									"aggregate": "count", 
+									"title": "Number of Cars",
+									"type": "quantitative"
+								},
+								"color": {
+									"field": "Origin",
+									"type": "nominal"
+								}
+							},
+							"layer":[{
+								"mark": "bar"
+							},{
+								"mark": {
+									"type": "text",
+									"align": "left",
+									"baseline": "middle",
+									"dx": 5
+								},
+								"encoding": {
+									"text": {
+										"aggregate": "count",
+										"type": "quantitative"
+									}
+								}
+							}]
+						</code></pre>
+						</section>
+
+				</section>
+				<!-- End of a vertical slide -->
+
+
+				<section>
+
+					<h3>Cool!</h3>
+					<p> Everything here can be learned on the <a href="https://vega.github.io/vega/docs/">Vega docs website</a> </p>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'h/v',
+				math: {
+				      mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				      config: 'TeX-AMS_HTML-full',
+				      // pass other options into `MathJax.Hub.Config()`
+				      TeX: { Macros: { RR: "{\\bf R}" } }
+				    },
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
