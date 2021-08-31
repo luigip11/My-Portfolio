@@ -60,14 +60,7 @@ h1, h2, h3, h4, h5, h6 {
   visibility: visible;
   opacity: 1;
 }
-/* Color Theme Swatches in Hex 
-.Graphic-Design-1-hex { color: #1D2C40; }
-.Graphic-Design-2-hex { color: #2E4159; }
-.Graphic-Design-3-hex { color: #0D0D0B; }
-.Graphic-Design-4-hex { color: #D9CCC1; }
-.Graphic-Design-5-hex { color: #A69A94; }
 
-*/
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -89,9 +82,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 15px auto;
   display: block;
   width: 150px;
-  border: none;                           /* old 4px solid #ffffff*/
-  border-radius:50%;                      /* add */
-  box-shadow:  2px  2px 15px #0f93ff;   /* add */
+  border: none;                               /* old 4px solid #ffffff*/
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {box-shadow: 0 0 22px 8px #0f93ff;}
 }
 
 #header .profile h1 {
@@ -223,6 +219,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav-active #header {
   left: 0;
+  backdrop-filter: blur(6px);
 }
 
 /*--------------------------------------------------------------
@@ -231,8 +228,15 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-wallpaper.jpg") top center;
-  background-size: cover;
+  padding: 0;
+}
+
+.hero-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 }
 
 #hero:before {
@@ -254,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 45px;
+  font-size: 55px;
   font-weight: 700;
   line-height: 56px;
   color: #ffffff;
@@ -263,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero p {
   color: #818b8b;
   margin-bottom: 50px;
-  font-size: 26px;
+  font-size: 30px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -279,16 +283,42 @@ h1, h2, h3, h4, h5, h6 {
     background-attachment: fixed;
   }
 }
-
-@media (max-width: 800px) {
+@media (max-width: 1398px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 45px;
     line-height: 36px;
   }
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  #hero h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  #hero h1 {
+    font-size: 32px;
+    line-height: 36px;
+    margin-left: 35px;
+  }
+  #hero p {
+    margin-left: 35px;
+    font-size: 22px;
   }
 }
 
@@ -334,10 +364,10 @@ section {
 }
 
 .section-img:hover {
-  box-shadow:  10px  10px 5px #3a3a3a,
-  -10px -10px 5px #3a3a3a,
-   10px -10px 5px #3a3a3a,
-  -10px  10px 5px #3a3a3a;
+  -webkit-box-shadow: 4px 4px 39px 4px #3A3A3A;
+  -moz-box-shadow: 4px 4px 39px 4px #3A3A3A;
+  -o-box-shadow: 4px 4px 39px 4px #3A3A3A;
+  box-shadow: 4px 4px 39px 4px #3A3A3A;
 }
 
 /*--------------------------------------------------------------
@@ -400,7 +430,7 @@ section {
   line-height: 40px;
   display: block;
   font-weight: 700;
-  color: #00ffc8;
+  color: #bfdef8;
   margin-left: 60px;
 }
 
@@ -434,6 +464,7 @@ section {
   display: block;
   background: none;
   border-radius: 0;
+  padding: 10px;
 }
 
 .skills .progress .skill {
@@ -443,7 +474,8 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
-  color: #00ffc8;
+  font-size: 14px;                      /* add */
+  color: #bfdef8;
 }
 
 .skills .progress .skill .val {
@@ -463,6 +495,10 @@ section {
   background-color: #0f93ff;
 }
 
+.skills .progress-bar-wrap:hover {
+  box-shadow: 0 0 12px 3px #0f93ff;
+}
+
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
@@ -477,7 +513,7 @@ section {
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #00ffc8;
+  border-left: 2px solid #bfdef8;
   position: relative;
 }
 
@@ -487,7 +523,7 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
-  color: #00ffc8;
+  color: #bfdef8;
   margin-bottom: 10px;
 }
 
@@ -550,7 +586,7 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #00ffc8;
+  color: #bfdef8;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
@@ -606,11 +642,11 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
   color: rgb(0, 0, 0);
-  background: #00ffc8;
+  background: #bfdef8;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid #ffbb0f;
+  border-left: 1px solid #bfdef8;
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -703,7 +739,7 @@ section {
   padding: 30px;
   background: #1f2323;
   width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  height: 500px;
 }
 
 .contact .info i {
@@ -730,13 +766,17 @@ section {
 
 .contact .info p {
   padding: 0 0 10px 60px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 14px;
   color: #fff;
 }
 
 .contact .info .email p {
   padding-top: 5px;
+}
+
+.contact .info .phone p {
+  margin-bottom: 0;
 }
 
 .contact .info .social-links {
@@ -759,14 +799,14 @@ section {
 }
 
 .contact .info:hover {
-  box-shadow:  10px  10px 5px #3a3a3a,
-  -10px -10px 5px #3a3a3a,
-   10px -10px 5px #3a3a3a,
-  -10px  10px 5px #3a3a3a;
+  -webkit-box-shadow: 4px 4px 39px 4px #3A3A3A;
+  -moz-box-shadow: 4px 4px 39px 4px #3A3A3A;
+  -o-box-shadow: 4px 4px 39px 4px #3A3A3A;
+  box-shadow: 4px 4px 39px 4px #3A3A3A;
 }
 
 .contact .info .social-links a:hover {
-  background: #00ffc8;
+  background: #bfdef8;
   color: rgb(0, 0, 0);
 }
 
@@ -775,7 +815,7 @@ section {
   .contact .info .facebook:hover i,
    .contact .info .linkedin:hover i,
     .contact .info .phone:hover i {
-  background: #00ffc8;
+  background: #bfdef8;
   color: rgb(0, 0, 0);
 }
 
@@ -783,6 +823,17 @@ section {
   cursor: pointer;
 } */
 
+.contact .map-container {
+  padding: 0;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .contact .map-container {
+    margin-top: 30px;
+  }
+}
+  
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
