@@ -59,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
+  scroll-behavior: smooth;
 }
 
 /*--------------------------------------------------------------
@@ -220,6 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-active #header {
   left: 0;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /*--------------------------------------------------------------
