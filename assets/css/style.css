@@ -340,6 +340,8 @@ section {
 
 .section-title {
   padding-bottom: 30px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .section-title h2 {
@@ -379,7 +381,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #0f93ff;
+  color: #ffffff;
 }
 
 .about .content ul {
@@ -564,6 +566,12 @@ section {
   border: 2px solid #818b8b;
 }
 
+.about .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -730,6 +738,161 @@ section {
   padding: 0;
 }
 */
+
+/*--------------------------------------------------------------
+# Reviews Section
+--------------------------------------------------------------*/
+.reviews {
+  padding: 60px 0;
+  overflow: hidden;
+  background: #1f2323;
+}
+
+.section-bg {
+  background: #1f2323;
+}
+
+.reviews-title {
+  padding-bottom: 30px;
+}
+
+.reviews-title-h4 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  position: relative;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+}
+
+/*.reviews-title-h4::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: #0f93ff; 
+  bottom: 0;
+  left: 0;
+}*/
+
+.reviews-title-h4:hover {
+  color: #ffffff;
+  text-shadow: 2px 4px 10px #0f93ff;
+}
+
+.reviews-title p {
+  margin-bottom: 0;
+}
+
+.reviews-img {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.reviews .content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.reviews .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+}
+
+.reviews .content ul li a:hover {
+  color: #ffffff;
+  text-shadow: 2px 4px 10px #0f93ff;
+}
+
+.reviews .content ul strong {
+  margin-right: 10px;
+}
+
+.reviews .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #0f93ff;
+  line-height: 0;
+}
+
+.reviews .icon {
+  color: #ffffff;
+}
+
+.reviews .icon:hover {
+  color: #0f93ff;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services {
+  padding: 0;
+}
+
+.services .icon-box {
+  margin-bottom: 20px;
+}
+
+.services .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: #0f93ff;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid #0f93ff;
+}
+
+.services .icon i {
+  color: #bfdef8;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.services .icon-box:hover .icon {
+  background: #bfdef8;
+}
+
+.services .icon-box:hover .icon i {
+  color: rgb(0, 0, 0);
+}
+
+.services .title {
+  margin-left: 80px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+
+.services .title a {
+  color: #ffffff;
+}
+
+.services .title a:hover {
+  color: #0f93ff;
+}
+
+.services .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 /*--------------------------------------------------------------
 # Contact
@@ -899,6 +1062,10 @@ section {
 
 #footer .copyright {
   text-align: left;
+}
+
+#footer .designer {
+  color: #0f93ff;
 }
 
 #footer .credits {
