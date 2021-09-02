@@ -5,6 +5,22 @@
 * License: https://bootstrapmade.com/license/
 */
 
+/*
+* List of all fonts:
+* "Montserrat Subrayada", sans-serif;
+* "Audiowide", sans-serif;
+* "Roboto", sans-serif;
+* "Raleway", sans-serif;
+*/
+
+/*
+* List of all colors:
+* Celeste: #0f93ff
+* Grigio: #818b8b
+* Bianco sporco: #d9ccc1
+* Blu: #228DFF
+*/
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -30,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat Subrayada", sans-serif;
+  font-family: "Audiowide", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -68,6 +84,121 @@ h6 {
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Img Logo
+--------------------------------------------------------------*/
+.res-circle {
+  width: 80%;
+  border-radius: 50%;
+  background: #000000;
+  line-height: 0;
+  position: relative;
+  margin: 15px auto;
+  display: block;
+  width: 150px;
+  border: none;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {
+    box-shadow: 0 0 22px 8px #0f93ff;
+  }
+}
+ 
+.res-circle::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+ 
+.circle-txt {
+  color: #228DFF;
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.circle-txt:hover {
+  color: #228DFF;
+  -webkit-animation: neon 0.5s ease-in-out infinite alternate;
+  -moz-animation: neon 0.5s ease-in-out infinite alternate;
+  animation: neon 0.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #228DFF,
+               0 0 70px  #228DFF,
+               0 0 80px  #228DFF,
+               0 0 100px #228DFF,
+               0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #228DFF,
+               0 0 35px #228DFF,
+               0 0 40px #228DFF,
+               0 0 50px #228DFF,
+               0 0 75px #228DFF;
+  }
+}
+
+@-moz-keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #228DFF,
+               0 0 70px  #228DFF,
+               0 0 80px  #228DFF,
+               0 0 100px #228DFF,
+               0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #228DFF,
+               0 0 35px #228DFF,
+               0 0 40px #228DFF,
+               0 0 50px #228DFF,
+               0 0 75px #228DFF;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #228DFF,
+               0 0 70px  #228DFF,
+               0 0 80px  #228DFF,
+               0 0 100px #228DFF,
+               0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #228DFF,
+               0 0 35px #228DFF,
+               0 0 40px #228DFF,
+               0 0 50px #228DFF,
+               0 0 75px #228DFF;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -440,6 +571,10 @@ section {
   width: 100%;
 }
 
+.facts .count-box:hover {
+  transform: scale(1.2);
+}
+
 .facts .count-box i {
   display: block;
   font-size: 44px;
@@ -469,14 +604,14 @@ section {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #122f57;
+  color: #818b8b;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
 }
 
 .facts .count-box a:hover {
-  color: #1f5297;
+  color: #0f93ff;
 }
 
 /*--------------------------------------------------------------
@@ -894,7 +1029,7 @@ section {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 22px;
-  font-family: "Montserrat Subrayada", sans-serif;
+  font-family: "Audiowide", sans-serif;
 }
 
 .services .title a {
