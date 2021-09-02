@@ -107,7 +107,11 @@ h6 {
     box-shadow: 0 0 22px 8px #0f93ff;
   }
 }
- 
+
+.res-circle:hover {
+  animation: none;
+}
+
 .res-circle::after {
   content: "";
   display: block;
@@ -115,7 +119,7 @@ h6 {
 }
  
 .circle-txt {
-  color: #228DFF;
+  color: #0f93ff;
   position: absolute;
   bottom: 50%;
   width: 100%;
@@ -125,8 +129,16 @@ h6 {
   font-size: 60px;
 }
 
-.circle-txt:hover {
-  color: #228DFF;
+.circle-txt a{
+  text-decoration:none; 
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.circle-txt:hover,
+.circle-txt a:hover {
+  color: #0f93ff;
   -webkit-animation: neon 0.5s ease-in-out infinite alternate;
   -moz-animation: neon 0.5s ease-in-out infinite alternate;
   animation: neon 0.5s ease-in-out infinite alternate;
@@ -328,6 +340,7 @@ h6 {
 .nav-menu li:hover > a {
   text-decoration: none;
   color: #fff;
+  transform: scale(1.05);
 }
 
 .nav-menu a:hover i,
@@ -335,6 +348,7 @@ h6 {
 .nav-menu .active:focus i,
 .nav-menu li:hover > a i {
   color: #fff;
+  transform: scale(1.05);
 }
 
 /* Mobile Navigation */
@@ -614,6 +628,12 @@ section {
   color: #0f93ff;
 }
 
+@media (max-width: 650px) {
+  .facts .count-box:hover {
+    transform: scale(1.1);
+  }
+}
+
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
@@ -758,6 +778,7 @@ section {
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
   color: #0f93ff;
+  transform: scale(1.02);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -894,9 +915,9 @@ section {
 */
 
 /*--------------------------------------------------------------
-# Reviews Section
+# Blog Section
 --------------------------------------------------------------*/
-.reviews {
+.blog {
   padding: 60px 0;
   overflow: hidden;
   background: #1f2323;
@@ -906,11 +927,11 @@ section {
   background: #1f2323;
 }
 
-.reviews-title {
+.blog-title {
   padding-bottom: 30px;
 }
 
-.reviews-title-h4 {
+.blog-title-h4 {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -920,7 +941,7 @@ section {
   font-family: "Raleway", sans-serif;
 }
 
-/*.reviews-title-h4::after {
+/*.blog-title-h4::after {
   content: '';
   position: absolute;
   display: block;
@@ -931,29 +952,29 @@ section {
   left: 0;
 }*/
 
-.reviews-title-h4:hover {
+.blog-title-h4:hover {
   color: #ffffff;
   text-shadow: 2px 4px 10px #0f93ff;
 }
 
-.reviews-title p {
+.blog-title p {
   margin-bottom: 0;
 }
 
-.reviews-img {
+.blog-img {
   margin-top: 10px;
   margin-bottom: 40px;
   padding-right: 0;
   padding-left: 0;
 }
 
-.reviews .content ul {
+.blog .content ul {
   list-style: none;
   padding: 0;
   margin-top: 10px;
 }
 
-.reviews .content ul li {
+.blog .content ul li {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -962,27 +983,28 @@ section {
   font-size: 25px;
 }
 
-.reviews .content ul li a:hover {
+.blog .content ul li a:hover {
   color: #ffffff;
   text-shadow: 2px 4px 10px #0f93ff;
+  transform: scale(1.02);
 }
 
-.reviews .content ul strong {
+.blog .content ul strong {
   margin-right: 10px;
 }
 
-.reviews .content ul i {
+.blog .content ul i {
   font-size: 16px;
   margin-right: 5px;
   color: #0f93ff;
   line-height: 0;
 }
 
-.reviews .icon {
+.blog .icon {
   color: #ffffff;
 }
 
-.reviews .icon:hover {
+.blog .icon:hover {
   color: #0f93ff;
 }
 
@@ -1032,12 +1054,17 @@ section {
   font-family: "Audiowide", sans-serif;
 }
 
+.services .title:hover {
+  transform: scale(1.02);
+}
+
 .services .title a {
   color: #ffffff;
 }
 
 .services .title a:hover {
-  color: #0f93ff;
+  color: #ffffff;
+  text-shadow: 2px 4px 10px #0f93ff;
 }
 
 .services .description {
@@ -1130,6 +1157,14 @@ section {
   color: rgb(0, 0, 0);
 }
 
+.contact .info .email:hover,
+.contact .info .address:hover,
+.contact .info .facebook:hover,
+.contact .info .linkedin:hover,
+.contact .info .phone:hover {
+ transform: scale(1.02);
+}
+
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .facebook:hover i,
@@ -1204,7 +1239,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   padding: 13px;
-  color: #f4f6fd;
+  color: #ffffff;
   font-size: 12px;
   position: fixed;
   left: 0;
