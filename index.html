@@ -11,8 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon" type="image/png" sizes="16x16">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Montserrat:wght@100;300;400;500;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -71,12 +70,34 @@
   </header><!-- End Header -->
 
 
+  <!-- ======= Scroll Opacity Script ======= -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(window).scroll(function(){
+      $('.hero-scroll, .scrolldown, .chevrondown').css("opacity", 1- 
+      $(window).scrollTop()/650)
+    })
+  })
+  </script><!-- End Scroll Opacity Script -->
+
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <img src="./assets/img/hero-wallpaper.jpg" class="hero-background"></img>
     <div class="hero-container" data-aos="fade-in">      
       <h1>Ciao, sono Luigi</h1>
       <p> > <span class="typed" data-typed-items="Web Developer, Software Developer, Assistenza computer, Consulente informatico"></span></p>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll down</span>
+    </div>
+    <div class='scrolldown'>
+      <div class="chevrons">
+        <div class='chevrondown'></div>
+        <div class='chevrondown'></div>
+        <div class='chevrondown'></div>
+      </div>
     </div>
   </section><!-- End Hero -->
 
