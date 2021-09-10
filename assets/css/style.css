@@ -119,7 +119,7 @@ h6 {
   display: block;
   padding-bottom: 100%;
 }
- 
+
 .circle-txt {
   color: #0f93ff;
   position: absolute;
@@ -131,8 +131,8 @@ h6 {
   font-size: 60px;
 }
 
-.circle-txt a{
-  text-decoration:none; 
+.circle-txt a {
+  text-decoration: none;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
@@ -148,70 +148,34 @@ h6 {
 
 @-webkit-keyframes neon {
   from {
-    text-shadow: 0 0 10px #fff,
-               0 0 20px  #fff,
-               0 0 30px  #fff,
-               0 0 40px  #228DFF,
-               0 0 70px  #228DFF,
-               0 0 80px  #228DFF,
-               0 0 100px #228DFF,
-               0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
   to {
-    text-shadow: 0 0 5px #fff,
-               0 0 10px #fff,
-               0 0 15px #fff,
-               0 0 20px #228DFF,
-               0 0 35px #228DFF,
-               0 0 40px #228DFF,
-               0 0 50px #228DFF,
-               0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
 
 @-moz-keyframes neon {
   from {
-    text-shadow: 0 0 10px #fff,
-               0 0 20px  #fff,
-               0 0 30px  #fff,
-               0 0 40px  #228DFF,
-               0 0 70px  #228DFF,
-               0 0 80px  #228DFF,
-               0 0 100px #228DFF,
-               0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
   to {
-    text-shadow: 0 0 5px #fff,
-               0 0 10px #fff,
-               0 0 15px #fff,
-               0 0 20px #228DFF,
-               0 0 35px #228DFF,
-               0 0 40px #228DFF,
-               0 0 50px #228DFF,
-               0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
 
 @keyframes neon {
   from {
-    text-shadow: 0 0 10px #fff,
-               0 0 20px  #fff,
-               0 0 30px  #fff,
-               0 0 40px  #228DFF,
-               0 0 70px  #228DFF,
-               0 0 80px  #228DFF,
-               0 0 100px #228DFF,
-               0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
   to {
-    text-shadow: 0 0 5px #fff,
-               0 0 10px #fff,
-               0 0 15px #fff,
-               0 0 20px #228DFF,
-               0 0 35px #228DFF,
-               0 0 40px #228DFF,
-               0 0 50px #228DFF,
-               0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
 
@@ -288,9 +252,9 @@ h6 {
   text-align: center;
   width: 50px;
   height: 50px;
-  transition: .3s linear;
+  transition: 0.3s linear;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   background: none;
   z-index: -10;
 }
@@ -304,8 +268,8 @@ h6 {
   margin: auto;
 }
 
-#header .profile .social-links a::before {  
-  content: '';
+#header .profile .social-links a::before {
+  content: "";
   position: absolute;
   margin-top: 2px;
   margin-left: -1px;
@@ -315,12 +279,11 @@ h6 {
   border-radius: 100%;
   z-index: -1;
   transform: scale(0);
-  transition: 0.5s cubic-bezier(.95, .32, .37, 1.21);
+  transition: 0.5s cubic-bezier(0.95, 0.32, 0.37, 1.21);
 }
-  
-#header .profile .social-links a:hover::before { 
+
+#header .profile .social-links a:hover::before {
   transform: scale(2);
-  
 }
 
 #header .profile .social-links .facebook:hover::before {
@@ -328,7 +291,7 @@ h6 {
 }
 
 #header .profile .social-links .linkedin:hover::before {
-  background: #0077B5;
+  background: #0077b5;
 }
 
 #header .profile .social-links .github:hover::before {
@@ -394,7 +357,7 @@ h6 {
   .nav-menu a,
   .nav-menu a:focus {
     color: #a4b3b3;
-}
+  }
 }
 
 /* Mobile Navigation */
@@ -495,13 +458,13 @@ h6 {
 #hero .hero-scroll {
   font-family: "Montserrat", sans-serif;
   position: absolute;
-    color: white;
-    text-decoration: none;
-    vertical-align: top; 
+  color: white;
+  text-decoration: none;
+  vertical-align: top;
   top: calc(100vh - 50px);
-    right: 20px;
-    transform-origin: right bottom;
-    transform: translateY(-100%) rotate(90deg) translateY(100%);
+  right: 20px;
+  transform-origin: right bottom;
+  transform: translateY(-100%) rotate(90deg) translateY(100%);
 }
 
 /*#hero .hero-scroll:after {
@@ -528,9 +491,9 @@ h6 {
   box-sizing: border-box;
   margin-bottom: 16px;
   top: calc(100vh - 40px);
-    right: 20px;
-    transform-origin: right bottom;
-    transform: translateY(-100%) rotate(0deg) translateY(30%) translateX(10%);  
+  right: 20px;
+  transform-origin: right bottom;
+  transform: translateY(-100%) rotate(0deg) translateY(30%) translateX(10%);
 }
 
 @keyframes scrolldown-anim {
@@ -948,12 +911,12 @@ section {
   opacity: 0;
 }
 
-.portfolio .portfolio-wrap:hover>img{
+.portfolio .portfolio-wrap:hover > img {
   transform: scale(1.05);
   filter: grayscale(0%);
 }
 
-.portfolio .portfolio-wrap:hover{
+.portfolio .portfolio-wrap:hover {
   filter: grayscale(0%);
 }
 
@@ -1314,7 +1277,7 @@ section {
 .contact .info .facebook:hover,
 .contact .info .linkedin:hover,
 .contact .info .phone:hover {
- transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .contact .info .email:hover i,
@@ -1405,11 +1368,11 @@ section {
   text-align: left;
 }
 
-#footer .designer a{
+#footer .designer a {
   color: #0f93ff;
 }
 
-#footer .designer a:hover{
+#footer .designer a:hover {
   color: #ffffff;
   text-shadow: 2px 4px 10px #0f93ff;
 }
