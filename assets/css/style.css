@@ -232,7 +232,7 @@ h6 {
 
 #main {
   margin-left: 300px;
-  color: #d9ccc1;
+  color: var(--color-bianco-sporco);
 }
 
 @media (max-width: 1199px) {
