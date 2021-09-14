@@ -255,3 +255,19 @@
   });
 
 })()
+
+/** Switch theme */
+var isToggled = false;
+$(function() {
+  $('#btnSwitchCss').on('click', function() {
+    isToggled = !isToggled;
+
+    if (isToggled) {
+      $("link[href='assets/css/style.css']").attr('href', 'assets/css/light.css');
+      $('#btnSwitchCss').toggleClass("bi bi-sun bi bi-moon");
+    } else {
+      $("link[href='assets/css/light.css']").attr('href', 'assets/css/style.css');
+      $('#btnSwitchCss').toggleClass("bi bi-moon bi bi-sun");
+    }
+  })
+});
