@@ -239,7 +239,7 @@ h6 {
   background: none;
   color: var(--color-grigio);
   padding: 8px 0;
-  margin-top: 15vh;
+  margin-bottom: 60px;
   text-align: center;
   width: 50px;
   height: 50px;
@@ -402,7 +402,6 @@ h6 {
   object-fit: cover;
   filter: blur(4px);
   -webkit-filter: blur(4px);
-  background-image: url("assets/css/hero-pc-code.jpg");
 }
 
 #hero:before {
@@ -1400,26 +1399,14 @@ section {
   }
 }
 
-@media (max-height: 912px) {
-  #footer,
-  #footer .copyright,
-  #footer .credits {
-    font-size: 0px;
-  }
-}
-
 /*--------------------------------------------------------------
 # Switch Theme
 --------------------------------------------------------------*/
 .switch-theme {
-  margin-top: 10px;
-  margin-left: 80px;
+  margin-top: 25px;
+  text-align: center;
   font-size: 23px;
   color: var(--color-celeste);
-}
-
-.switch-theme i {
-  content: "bi-moon";
 }
 
 .switch-theme:hover {
