@@ -413,11 +413,11 @@ h6 {
   object-fit: cover;
   filter: blur(3px);
   -webkit-filter: blur(3px);
-  background-image: url("/assets/img/hero-wallpaper.jpg");
+  /*background-image: url("/assets/img/hero-wallpaper.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: relative;*/
 }
 
 #hero:before {
