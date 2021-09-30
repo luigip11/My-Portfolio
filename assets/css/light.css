@@ -402,6 +402,11 @@ h6 {
   object-fit: cover;
   filter: blur(4px);
   -webkit-filter: blur(4px);
+  background-image: url("/assets/img/hero-pc-code.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 #hero:before {
