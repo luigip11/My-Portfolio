@@ -120,6 +120,20 @@ h6 {
   }
 }
 
+@keyframes sidebar-toggle-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 6px #fff, 0 0 16px var(--color-celeste),
+      0 0 28px var(--color-celeste);
+  }
+  50% {
+    transform: scale(1.04);
+    text-shadow: 0 0 7px #fff, 0 0 18px var(--color-celeste),
+      0 0 32px var(--color-celeste);
+  }
+}
+
 .res-circle:has(.brand-link:hover),
 .res-circle:has(.sidebar-toggle:hover),
 .res-circle:has(.sidebar-toggle:focus-visible) {
@@ -202,8 +216,15 @@ h6 {
     0 0 28px var(--color-celeste);
 }
 
-.res-circle.logo-hovered .circle-txt-expanded,
-.res-circle:focus-within .circle-txt-expanded {
+.res-circle.logo-hovered .sidebar-toggle {
+  animation: sidebar-toggle-pulse 1.2s ease-in-out infinite;
+}
+
+.sidebar-toggle:focus-visible {
+  animation: none;
+}
+
+.res-circle.logo-hovered .circle-txt-expanded {
   opacity: 0;
   transform: translateY(-50%) scale(0.92);
 }

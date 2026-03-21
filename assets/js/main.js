@@ -102,7 +102,8 @@ const initPortfolioApp = () => {
   const sidebarToggle = select('.sidebar-toggle');
   const brandLink = select('.brand-link');
   const logoCircle = select('.res-circle');
-  const isDesktopSidebar = () => window.matchMedia('(min-width: 1200px)').matches;
+  const desktopSidebarQuery = window.matchMedia('(min-width: 1200px)');
+  const isDesktopSidebar = () => desktopSidebarQuery.matches;
   const isSidebarCollapsed = () => document.body.classList.contains('sidebar-collapsed');
   const syncSidebarToggleLabel = () => {
     if (!sidebarToggle) return;
@@ -111,9 +112,20 @@ const initPortfolioApp = () => {
   };
 
   if (logoCircle) {
-    const setLogoHovered = (isHovered) => {
-      const shouldShowHamburger = isHovered && isDesktopSidebar() && !isSidebarCollapsed();
+    let logoPointerInside = false;
+
+    const syncLogoState = () => {
+      const shouldShowHamburger = logoPointerInside && isDesktopSidebar() && !isSidebarCollapsed();
       logoCircle.classList.toggle('logo-hovered', shouldShowHamburger);
+    };
+
+    const syncDesktopSidebarMode = () => {
+      if (isDesktopSidebar()) return;
+
+      document.body.classList.remove('sidebar-collapsed');
+      logoPointerInside = false;
+      syncLogoState();
+      syncSidebarToggleLabel();
     };
 
     const isEventInsideCircle = (event) => {
@@ -127,36 +139,29 @@ const initPortfolioApp = () => {
       return (deltaX * deltaX) + (deltaY * deltaY) <= radius * radius;
     };
 
-    const syncLogoHoverFromFocus = () => {
-      const activeElement = document.activeElement;
-      const isLogoFocused = activeElement === brandLink || activeElement === sidebarToggle;
-      setLogoHovered(isLogoFocused);
-    };
-
     logoCircle.addEventListener('pointermove', (event) => {
-      if (!isDesktopSidebar() || isSidebarCollapsed()) {
-        setLogoHovered(false);
-        return;
-      }
-
-      setLogoHovered(isEventInsideCircle(event));
+      logoPointerInside = isEventInsideCircle(event);
+      syncLogoState();
     });
 
     logoCircle.addEventListener('pointerleave', () => {
-      setLogoHovered(false);
-    });
-
-    logoCircle.addEventListener('focusin', syncLogoHoverFromFocus);
-    logoCircle.addEventListener('focusout', () => {
-      window.requestAnimationFrame(syncLogoHoverFromFocus);
+      logoPointerInside = false;
+      syncLogoState();
     });
 
     if (sidebarToggle) {
+      syncDesktopSidebarMode();
       syncSidebarToggleLabel();
       sidebarToggle.addEventListener('click', () => {
+        if (!isDesktopSidebar()) {
+          syncDesktopSidebarMode();
+          return;
+        }
+
         document.body.classList.toggle('sidebar-collapsed');
         syncSidebarToggleLabel();
-        setLogoHovered(false);
+        logoPointerInside = false;
+        syncLogoState();
       });
     }
 
@@ -167,17 +172,42 @@ const initPortfolioApp = () => {
         event.preventDefault();
         document.body.classList.remove('sidebar-collapsed');
         syncSidebarToggleLabel();
-        window.requestAnimationFrame(() => {
-          setLogoHovered(true);
-        });
+        syncLogoState();
+        brandLink.blur();
       });
     }
+
+    if (typeof desktopSidebarQuery.addEventListener === 'function') {
+      desktopSidebarQuery.addEventListener('change', syncDesktopSidebarMode);
+    } else if (typeof desktopSidebarQuery.addListener === 'function') {
+      desktopSidebarQuery.addListener(syncDesktopSidebarMode);
+    }
   } else if (sidebarToggle) {
+    const syncDesktopSidebarMode = () => {
+      if (!isDesktopSidebar()) {
+        document.body.classList.remove('sidebar-collapsed');
+      }
+
+      syncSidebarToggleLabel();
+    };
+
+    syncDesktopSidebarMode();
     syncSidebarToggleLabel();
     sidebarToggle.addEventListener('click', () => {
+      if (!isDesktopSidebar()) {
+        syncDesktopSidebarMode();
+        return;
+      }
+
       document.body.classList.toggle('sidebar-collapsed');
       syncSidebarToggleLabel();
     });
+
+    if (typeof desktopSidebarQuery.addEventListener === 'function') {
+      desktopSidebarQuery.addEventListener('change', syncDesktopSidebarMode);
+    } else if (typeof desktopSidebarQuery.addListener === 'function') {
+      desktopSidebarQuery.addListener(syncDesktopSidebarMode);
+    }
   }
 
   on('click', '.scrollto', function(e) {
