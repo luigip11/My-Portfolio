@@ -788,6 +788,33 @@ section {
   color: var(--color-celeste);
 }
 
+.resume .resume-download {
+  margin-bottom: 30px;
+}
+
+.resume .resume-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  border: 1px solid var(--color-celeste);
+  border-radius: 999px;
+  background: rgba(15, 147, 255, 0.08);
+  color: black;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.resume .resume-download-link i {
+  font-size: 18px;
+}
+
+.resume .resume-download-link:hover {
+  background: var(--color-celeste);
+  border-color: var(--color-celeste);
+  color: var(--color-bianco);
+}
+
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
