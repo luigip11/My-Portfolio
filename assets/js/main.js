@@ -256,18 +256,37 @@
 
 })()
 
-/** Switch theme */
-var isToggled = false;
-$(function() {
-  $('#btnSwitchCss').on('click', function() {
-    isToggled = !isToggled;
+document.addEventListener('DOMContentLoaded', () => {
+  const themeButton = document.getElementById('btnSwitchCss');
+  const themeStylesheet = document.querySelector('link[href="assets/css/style.css"]');
+  const heroFadeElements = document.querySelectorAll('.hero-scroll, .scrolldown, .chevrondown');
+  let isToggled = false;
 
-    if (isToggled) {
-      $("link[href='assets/css/style.css']").attr('href', 'assets/css/light.css');
-      $('#btnSwitchCss').toggleClass("bi bi-sun bi bi-moon");
-    } else {
-      $("link[href='assets/css/light.css']").attr('href', 'assets/css/style.css');
-      $('#btnSwitchCss').toggleClass("bi bi-moon bi bi-sun");
-    }
-  })
+  const updateHeroOpacity = () => {
+    const opacity = Math.max(0, 1 - (window.scrollY / 650));
+    heroFadeElements.forEach((element) => {
+      element.style.opacity = opacity;
+    });
+  };
+
+  if (themeButton && themeStylesheet) {
+    themeButton.addEventListener('click', () => {
+      isToggled = !isToggled;
+
+      if (isToggled) {
+        themeStylesheet.setAttribute('href', 'assets/css/light.css');
+        themeButton.classList.remove('bi-sun');
+        themeButton.classList.add('bi-moon');
+      } else {
+        themeStylesheet.setAttribute('href', 'assets/css/style.css');
+        themeButton.classList.remove('bi-moon');
+        themeButton.classList.add('bi-sun');
+      }
+    });
+  }
+
+  if (heroFadeElements.length > 0) {
+    updateHeroOpacity();
+    window.addEventListener('scroll', updateHeroOpacity, { passive: true });
+  }
 });
