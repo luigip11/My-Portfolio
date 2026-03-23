@@ -1021,10 +1021,10 @@ section {
 }
 
 .skills .progress-bar {
-  width: 1px;
+  width: 0;
   height: 10px;
-  transition: 0.9s;
   background-color: var(--color-celeste);
+  will-change: width;
 }
 
 .skills .progress-bar-wrap:hover {

@@ -293,17 +293,79 @@ const initPortfolioApp = () => {
   }
 
   const skillsContent = select('.skills-content');
-  if (skillsContent && typeof Waypoint !== 'undefined') {
-    new Waypoint({
-      element: skillsContent,
-      offset: '80%',
-      handler: function() {
-        const progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = `${el.getAttribute('aria-valuenow')}%`;
-        });
-      }
+  if (skillsContent) {
+    const skillProgressBars = select('.skills .progress', true);
+    const animateSkills = () => {
+      if (skillsContent.dataset.animated === 'true') return;
+
+      skillsContent.dataset.animated = 'true';
+      skillProgressBars.forEach((skillItem, index) => {
+        const progressBar = skillItem.querySelector('.progress-bar');
+        const valueLabel = skillItem.querySelector('.val');
+        if (!progressBar || !valueLabel) return;
+
+        const targetValue = Number(progressBar.getAttribute('aria-valuenow') || 0);
+        const duration = 1100 + (index * 45);
+        const startTime = performance.now();
+
+        progressBar.style.width = '0%';
+        valueLabel.textContent = '0%';
+
+        const updateSkillProgress = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = 1 - Math.pow(1 - progress, 3);
+          const currentValue = Math.round(targetValue * easedProgress);
+
+          progressBar.style.width = `${targetValue * easedProgress}%`;
+          valueLabel.textContent = `${currentValue}%`;
+
+          if (progress < 1) {
+            window.requestAnimationFrame(updateSkillProgress);
+          } else {
+            progressBar.style.width = `${targetValue}%`;
+            valueLabel.textContent = `${targetValue}%`;
+          }
+        };
+
+        window.requestAnimationFrame(updateSkillProgress);
+      });
+    };
+
+    skillProgressBars.forEach((skillItem) => {
+      const valueLabel = skillItem.querySelector('.val');
+      const progressBar = skillItem.querySelector('.progress-bar');
+      if (!valueLabel || !progressBar) return;
+
+      valueLabel.textContent = '0%';
+      progressBar.style.width = '0%';
     });
+
+    if ('IntersectionObserver' in window) {
+      const skillsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          animateSkills();
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.35
+      });
+
+      skillsObserver.observe(skillsContent);
+    } else if (typeof Waypoint !== 'undefined') {
+      new Waypoint({
+        element: skillsContent,
+        offset: '80%',
+        handler: function() {
+          animateSkills();
+          this.destroy();
+        }
+      });
+    } else {
+      animateSkills();
+    }
   }
 
   onWindowReady(() => {
