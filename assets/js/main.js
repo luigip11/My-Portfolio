@@ -396,6 +396,8 @@ const initPortfolioApp = () => {
 
   const themeButton = document.getElementById('btnSwitchCss');
   const themeStylesheet = document.querySelector('link[href="assets/css/style.css"], link[href="assets/css/light.css"]');
+  const heroSection = document.getElementById('hero');
+  const aboutSection = document.getElementById('about');
   const heroFadeElements = document.querySelectorAll('.hero-scroll, .scrolldown, .chevrondown');
 
   const setThemeIcon = (isLightTheme) => {
@@ -410,6 +412,21 @@ const initPortfolioApp = () => {
     heroFadeElements.forEach((element) => {
       element.style.opacity = opacity;
     });
+  };
+
+  const updateSidebarRevealProgress = () => {
+    if (!heroSection || !aboutSection) {
+      document.body.style.setProperty('--hero-sidebar-progress', '1');
+      document.body.classList.remove('hero-sidebar-hidden');
+      return;
+    }
+
+    const revealStart = heroSection.offsetTop + (heroSection.offsetHeight * 0.42);
+    const revealEnd = Math.max(revealStart + 1, aboutSection.offsetTop - (window.innerHeight * 0.12));
+    const progress = Math.max(0, Math.min(1, (window.scrollY - revealStart) / (revealEnd - revealStart)));
+
+    document.body.style.setProperty('--hero-sidebar-progress', progress.toFixed(3));
+    document.body.classList.toggle('hero-sidebar-hidden', progress < 0.08);
   };
 
   if (themeButton && themeStylesheet) {
@@ -427,6 +444,10 @@ const initPortfolioApp = () => {
     updateHeroOpacity();
     window.addEventListener('scroll', updateHeroOpacity, { passive: true });
   }
+
+  updateSidebarRevealProgress();
+  window.addEventListener('scroll', updateSidebarRevealProgress, { passive: true });
+  window.addEventListener('resize', updateSidebarRevealProgress);
 };
 
 waitForSections()
