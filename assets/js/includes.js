@@ -9,7 +9,12 @@
       throw new Error(`Unable to load section: ${path}`);
     }
 
-    node.outerHTML = (await response.text()).trim();
+    const markup = (await response.text()).trim();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(markup, 'text/html');
+    const partialRoot = doc.querySelector('[data-partial-root]');
+
+    node.outerHTML = partialRoot ? partialRoot.innerHTML.trim() : markup;
   };
 
   window.sectionsReady = Promise.all(includeNodes.map(loadInclude))
