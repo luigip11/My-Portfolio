@@ -46,6 +46,8 @@ const initPortfolioApp = () => {
     el.addEventListener('scroll', listener);
   };
 
+  let refreshSidebarReveal = () => {};
+
   const navbarlinks = select('#navbar .scrollto', true);
   const navbarlinksActive = () => {
     const position = window.scrollY + 200;
@@ -93,10 +95,25 @@ const initPortfolioApp = () => {
   onscroll(document, navbarlinksActive);
   onWindowReady(navbarlinksActive);
 
+  const closeMobileNav = () => {
+    const body = select('body');
+    if (!body.classList.contains('mobile-nav-active')) return;
+
+    body.classList.remove('mobile-nav-active');
+    const navbarToggle = select('.mobile-nav-toggle');
+    if (navbarToggle) {
+      navbarToggle.classList.add('bi-list');
+      navbarToggle.classList.remove('bi-x');
+    }
+
+    refreshSidebarReveal();
+  };
+
   on('click', '.mobile-nav-toggle', function() {
     select('body').classList.toggle('mobile-nav-active');
     this.classList.toggle('bi-list');
     this.classList.toggle('bi-x');
+    window.requestAnimationFrame(() => refreshSidebarReveal());
   });
 
   const sidebarToggle = select('.sidebar-toggle');
@@ -167,6 +184,13 @@ const initPortfolioApp = () => {
 
     if (brandLink) {
       brandLink.addEventListener('click', (event) => {
+        if (!isDesktopSidebar()) {
+          event.preventDefault();
+          closeMobileNav();
+          scrollto('#hero');
+          return;
+        }
+
         if (!isSidebarCollapsed() || !isDesktopSidebar()) return;
 
         event.preventDefault();
@@ -215,15 +239,7 @@ const initPortfolioApp = () => {
 
     e.preventDefault();
 
-    const body = select('body');
-    if (body.classList.contains('mobile-nav-active')) {
-      body.classList.remove('mobile-nav-active');
-      const navbarToggle = select('.mobile-nav-toggle');
-      if (navbarToggle) {
-        navbarToggle.classList.toggle('bi-list');
-        navbarToggle.classList.toggle('bi-x');
-      }
-    }
+    closeMobileNav();
 
     scrollto(this.hash);
   }, true);
@@ -477,6 +493,12 @@ const initPortfolioApp = () => {
   };
 
   const updateSidebarRevealProgress = () => {
+    if (document.body.classList.contains('mobile-nav-active')) {
+      document.body.style.setProperty('--hero-sidebar-progress', '1');
+      document.body.classList.remove('hero-sidebar-hidden');
+      return;
+    }
+
     if (!heroSection || !aboutSection) {
       document.body.style.setProperty('--hero-sidebar-progress', '1');
       document.body.classList.remove('hero-sidebar-hidden');
@@ -490,6 +512,8 @@ const initPortfolioApp = () => {
     document.body.style.setProperty('--hero-sidebar-progress', progress.toFixed(3));
     document.body.classList.toggle('hero-sidebar-hidden', progress < 0.08);
   };
+
+  refreshSidebarReveal = updateSidebarRevealProgress;
 
   if (themeButton && themeStylesheet) {
     let isLightTheme = themeStylesheet.getAttribute('href') === 'assets/css/light.css';
