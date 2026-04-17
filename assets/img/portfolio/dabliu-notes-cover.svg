@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Dabliu Notes cover</title>
+  <desc id="desc">Copertina illustrata per il progetto Dabliu Notes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07131f"/>
+      <stop offset="55%" stop-color="#114f85"/>
+      <stop offset="100%" stop-color="#29b0ff"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="100%" stop-color="#d9efff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="1010" cy="140" r="118" fill="#ffffff" fill-opacity=".08"/>
+  <circle cx="175" cy="645" r="160" fill="#ffffff" fill-opacity=".05"/>
+  <rect x="792" y="90" width="230" height="470" rx="34" fill="#0a1118" stroke="#7ed1ff" stroke-opacity=".4"/>
+  <rect x="812" y="120" width="190" height="410" rx="24" fill="url(#screen)"/>
+  <rect x="842" y="162" width="130" height="18" rx="9" fill="#87d9ff"/>
+  <rect x="842" y="212" width="130" height="110" rx="18" fill="#b3e6ff"/>
+  <rect x="842" y="350" width="58" height="58" rx="14" fill="#45c4ff"/>
+  <rect x="914" y="350" width="58" height="58" rx="14" fill="#138de3"/>
+  <rect x="842" y="425" width="130" height="20" rx="10" fill="#94cfff"/>
+  <rect x="842" y="462" width="95" height="20" rx="10" fill="#94cfff"/>
+  <text x="92" y="164" fill="#a8dfff" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="5">APP MOBILE</text>
+  <text x="92" y="284" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700">Dabliu Notes</text>
+  <text x="92" y="360" fill="#d8efff" font-family="Arial, Helvetica, sans-serif" font-size="31">Appunti, collaborazione e strumenti smart</text>
+  <rect x="92" y="446" width="198" height="54" rx="27" fill="#ffffff" fill-opacity=".14"/>
+  <text x="191" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Realtime</text>
+  <rect x="308" y="446" width="164" height="54" rx="27" fill="#ffffff" fill-opacity=".14"/>
+  <text x="390" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Cloud</text>
+  <rect x="490" y="446" width="130" height="54" rx="27" fill="#ffffff" fill-opacity=".14"/>
+  <text x="555" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">AI</text>
+</svg>

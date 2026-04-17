@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">GT Fleet Web Platform cover</title>
+  <desc id="desc">Copertina illustrata per la piattaforma web GT Fleet.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111e"/>
+      <stop offset="55%" stop-color="#16406e"/>
+      <stop offset="100%" stop-color="#3bb9ff"/>
+    </linearGradient>
+    <linearGradient id="dash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5fbff"/>
+      <stop offset="100%" stop-color="#d7ebff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="1042" cy="170" r="120" fill="#ffffff" fill-opacity=".08"/>
+  <rect x="760" y="106" width="360" height="286" rx="24" fill="#0a1522" stroke="#8dd6ff" stroke-opacity=".28"/>
+  <rect x="784" y="132" width="312" height="236" rx="18" fill="url(#dash)"/>
+  <rect x="812" y="164" width="120" height="18" rx="9" fill="#95caf4"/>
+  <rect x="812" y="206" width="124" height="92" rx="18" fill="#cfe6fb"/>
+  <rect x="952" y="206" width="116" height="36" rx="14" fill="#3fa7f3"/>
+  <rect x="952" y="258" width="116" height="18" rx="9" fill="#95caf4"/>
+  <rect x="952" y="288" width="88" height="18" rx="9" fill="#95caf4"/>
+  <path d="M812 332h256" stroke="#96c7f1" stroke-width="14" stroke-linecap="round"/>
+  <path d="M812 332l52-32 56 18 58-42 54 15" fill="none" stroke="#0f93ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="92" y="164" fill="#afdfff" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="5">PIATTAFORMA WEB</text>
+  <text x="92" y="284" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">GT Fleet Web</text>
+  <text x="92" y="360" fill="#d9efff" font-family="Arial, Helvetica, sans-serif" font-size="30">Dashboard, mezzi e operazioni in un'unica interfaccia</text>
+  <rect x="92" y="446" width="214" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="199" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Dashboard</text>
+  <rect x="324" y="446" width="182" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="415" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Tracking</text>
+  <rect x="524" y="446" width="176" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="612" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Reports</text>
+</svg>
