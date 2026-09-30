@@ -1812,6 +1812,50 @@ body.hero-sidebar-hidden .mobile-nav-toggle {
 }
 
 @media (min-width: 1200px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #header > .d-flex {
+    margin-bottom: 78px;
+  }
+
+  #header > .d-flex,
+  #header .profile {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  #header .profile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  #navbar.nav-menu.navbar {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  #navbar.nav-menu.navbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  #navbar.nav-menu.navbar > ul {
+    padding-bottom: 20px;
+  }
+
+  #header .profile.nav-has-more #navbar {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 56px), rgba(0, 0, 0, 0.72) calc(100% - 32px), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 56px), rgba(0, 0, 0, 0.72) calc(100% - 32px), transparent 100%);
+  }
+
   .sidebar-toggle {
     display: inline-flex;
   }

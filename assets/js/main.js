@@ -122,6 +122,35 @@ const initPortfolioApp = () => {
   const desktopSidebarQuery = window.matchMedia('(min-width: 1200px)');
   const isDesktopSidebar = () => desktopSidebarQuery.matches;
   const isSidebarCollapsed = () => document.body.classList.contains('sidebar-collapsed');
+  const sidebarNav = select('#navbar');
+  const sidebarProfile = select('#header .profile');
+  const centerSidebarLink = (link) => {
+    if (!sidebarNav || !isDesktopSidebar() || !sidebarNav.contains(link)) return;
+
+    const navRect = sidebarNav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    const centeredTop = sidebarNav.scrollTop + linkRect.top - navRect.top -
+      (sidebarNav.clientHeight - linkRect.height) / 2;
+
+    sidebarNav.scrollTo({
+      top: centeredTop,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    });
+  };
+  if (sidebarNav && sidebarProfile) {
+    const updateNavOverflowCue = () => {
+      const hasMoreBelow = isDesktopSidebar() &&
+        sidebarNav.scrollTop + sidebarNav.clientHeight < sidebarNav.scrollHeight - 2;
+      sidebarProfile.classList.toggle('nav-has-more', hasMoreBelow);
+    };
+
+    sidebarNav.addEventListener('scroll', updateNavOverflowCue, { passive: true });
+    window.addEventListener('resize', updateNavOverflowCue);
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(updateNavOverflowCue).observe(sidebarNav);
+    }
+    window.requestAnimationFrame(updateNavOverflowCue);
+  }
   const syncSidebarToggleLabel = () => {
     if (!sidebarToggle) return;
 
@@ -239,6 +268,7 @@ const initPortfolioApp = () => {
 
     e.preventDefault();
 
+    centerSidebarLink(this);
     closeMobileNav();
 
     scrollto(this.hash);
