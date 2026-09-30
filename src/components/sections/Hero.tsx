@@ -4,6 +4,7 @@ import { LuArrowRight, LuDownload } from 'react-icons/lu'
 import hero1280 from '../../assets/img/hero-1280.webp'
 import hero1920 from '../../assets/img/hero-1920.webp'
 import hero2400 from '../../assets/img/hero-2400.webp'
+import type { SectionId } from '../../data/navigation'
 import { profile } from '../../data/profile'
 import { useScrollTo } from '../../hooks/useScrollTo'
 import { EASE_OUT_EXPO } from '../../lib/motion'
@@ -30,7 +31,7 @@ export function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0])
   const cueOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
 
-  const goTo = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+  const goTo = (id: SectionId) => (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
     scrollTo(id)
   }

@@ -16,6 +16,7 @@ import { Resume } from './components/sections/Resume'
 import { Skills } from './components/sections/Skills'
 import { navItems } from './data/navigation'
 import { useActiveSection } from './hooks/useActiveSection'
+import { useNavigationTarget } from './hooks/useScrollTo'
 
 const sectionIds = navItems.map((item) => item.id)
 
@@ -23,7 +24,9 @@ const sectionIds = navItems.map((item) => item.id)
 const isPastHero = (scrollY: number) => scrollY > window.innerHeight * 0.55
 
 export default function App() {
-  const active = useActiveSection(sectionIds)
+  const observedSection = useActiveSection(sectionIds)
+  // After a nav click, highlight the destination for the whole scroll.
+  const active = useNavigationTarget() ?? observedSection
   const { scrollY } = useScroll()
   const [pastHero, setPastHero] = useState(() => isPastHero(window.scrollY))
 
