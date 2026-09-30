@@ -2,6 +2,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useRef, type MouseEvent } from 'react'
 import { LuArrowRight, LuDownload } from 'react-icons/lu'
 import hero1280 from '../../assets/img/hero-1280.webp'
+import hero1920 from '../../assets/img/hero-1920.webp'
 import hero2400 from '../../assets/img/hero-2400.webp'
 import { profile } from '../../data/profile'
 import { useScrollTo } from '../../hooks/useScrollTo'
@@ -49,7 +50,7 @@ export function Hero() {
       >
         <img
           src={hero2400}
-          srcSet={`${hero1280} 1280w, ${hero2400} 2400w`}
+          srcSet={`${hero1280} 1280w, ${hero1920} 1920w, ${hero2400} 2400w`}
           sizes="100vw"
           width={2400}
           height={1600}

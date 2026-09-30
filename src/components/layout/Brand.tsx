@@ -15,7 +15,7 @@ export function Brand({ className = '' }: { className?: string }) {
     <a
       href="#hero"
       onClick={handleClick}
-      aria-label="Luigi Puzziferri, torna all'inizio"
+      aria-label="LP, Luigi Puzziferri: torna all'inizio"
       className={`grid size-12 place-items-center rounded-full border border-white/10 bg-[#050506] animate-[logo-pulse_5s_ease-in-out_infinite] ${className}`}
     >
       <span aria-hidden="true" className="font-logo text-lg leading-none text-[#0f93ff]">
