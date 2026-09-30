@@ -1,0 +1,221 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* -----------------------------------------------------------------------------
+ * Design tokens — "Dark Mode (OLED)" direction from ui-ux-pro-max,
+ * tuned to the existing identity (neon blue #0f93ff).
+ * -------------------------------------------------------------------------- */
+:root,
+[data-theme='dark'] {
+  --bg: #050506;
+  --surface: #0b0e13;
+  --card: #10141b;
+  --card-hover: #141a23;
+  --border: #1f2733;
+  --border-strong: #2c3747;
+  --fg: #f5f7fa;
+  --muted: #94a3b8;
+  /* Accent used for text and icons (6.4:1 on --bg) */
+  --accent: #0f93ff;
+  --accent-soft: #bfdef8;
+  /* Solid accent surfaces (buttons) and the text on top of them */
+  --accent-solid: #0f93ff;
+  --on-accent: #020b14;
+  --glow: rgb(15 147 255 / 0.45);
+  --glow-soft: rgb(15 147 255 / 0.14);
+  --hero-overlay: rgb(5 5 6 / 0.72);
+  --map-filter: invert(0.9) hue-rotate(180deg) saturate(0.6) brightness(0.9);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --card-hover: #f1f6fd;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --fg: #0a0f1a;
+  --muted: #475569;
+  /* #0f93ff fails 4.5:1 on white, so text accent is darker (5.2:1) */
+  --accent: #0369c9;
+  --accent-soft: #0f93ff;
+  --accent-solid: #0369c9;
+  --on-accent: #ffffff;
+  --glow: rgb(15 147 255 / 0.35);
+  --glow-soft: rgb(15 147 255 / 0.1);
+  --hero-overlay: rgb(246 248 251 / 0.82);
+  --map-filter: none;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-solid: var(--accent-solid);
+  --color-on-accent: var(--on-accent);
+  --color-glow: var(--glow);
+  --color-glow-soft: var(--glow-soft);
+
+  --font-display: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', monospace;
+  --font-logo: 'Audiowide', var(--font-display);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* -----------------------------------------------------------------------------
+ * Base
+ * -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    background: var(--bg);
+    scroll-padding-top: 1.5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100svh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--accent-solid);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  a,
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Utilities
+ * -------------------------------------------------------------------------- */
+@utility container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility text-gradient {
+  background: linear-gradient(100deg, var(--fg) 10%, var(--accent) 55%, var(--accent-soft) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(color-mix(in oklab, var(--accent) 45%, transparent) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* Logo glow pulse, carried over from the old site's #mymove keyframes */
+@keyframes logo-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 22px 6px var(--glow);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 28px 28px;
+  }
+}
+
+@keyframes live-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  80%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Theme switch: circular reveal driven from ThemeToggle via View Transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
