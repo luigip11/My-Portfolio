@@ -101,13 +101,14 @@ function Portrait() {
   const transition = { duration: 1.2, ease: EASE_OUT_EXPO }
 
   return (
-    <div className="lg:sticky lg:top-24 lg:self-start">
-      <motion.figure
+    <figure className="lg:sticky lg:top-24 lg:self-start">
+      <motion.div
         initial={reduceMotion ? false : { clipPath: 'inset(100% 0% 0% 0% round 24px)' }}
         whileInView={{ clipPath: 'inset(0% 0% 0% 0% round 24px)' }}
         viewport={inViewOnce}
         transition={transition}
-        className="group relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-card"
+        // Same ratio as the photo (1170×681), so it is shown whole instead of cropped
+        className="group relative aspect-[1170/681] overflow-hidden rounded-3xl border border-border bg-card"
       >
         <motion.img
           src={work}
@@ -119,17 +120,14 @@ function Portrait() {
           whileInView={{ scale: 1 }}
           viewport={inViewOnce}
           transition={transition}
-          className="size-full object-cover object-[32%_50%] transition-[filter] duration-500 group-hover:brightness-110"
+          className="size-full object-cover transition-[filter] duration-500 group-hover:brightness-110"
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent"
-        />
-        <figcaption className="absolute inset-x-4 bottom-4 bg-black/55 backdrop-blur-md flex items-center gap-2.5 rounded-xl border border-white/10 px-4 py-3 font-mono text-xs text-white">
-          <span aria-hidden="true" className="size-2 rounded-full bg-[#0f93ff] shadow-[0_0_10px_#0f93ff]" />
-          Mobile Design Developer @ Wacebo Europe
-        </figcaption>
-      </motion.figure>
-    </div>
+      </motion.div>
+      {/* Below the photo, so it never covers the face */}
+      <figcaption className="mt-4 flex items-center gap-2.5 px-1 font-mono text-xs text-muted">
+        <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-accent shadow-[0_0_10px_var(--glow)]" />
+        Mobile Design Developer @ Wacebo Europe
+      </figcaption>
+    </figure>
   )
 }
