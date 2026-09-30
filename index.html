@@ -1,59 +1,44 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!doctype html>
+<html lang="it" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Luigi Puzziferri · Mobile & Web Developer</title>
+    <meta
+      name="description"
+      content="Portfolio di Luigi Puzziferri, Mobile e Web Developer: app mobile, frontend curato e interfacce chiare, utili e veloci."
+    />
+    <meta name="author" content="Luigi Puzziferri" />
+    <meta name="theme-color" content="#050506" />
+    <meta name="color-scheme" content="dark light" />
 
-  <title>LP - Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Luigi Puzziferri · Mobile & Web Developer" />
+    <meta
+      property="og:description"
+      content="App mobile, frontend curato e interfacce pensate per essere chiare, utili e veloci."
+    />
+    <meta property="og:url" content="https://luigip11.github.io/My-Portfolio/" />
 
-  <link href="assets/img/favicon.png" rel="icon" type="image/png" sizes="92x92">
+    <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Montserrat:wght@100;300;400;500;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-</head>
-<body>
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <div data-include="sections/header.html"></div>
-  <div data-include="sections/hero.html"></div>
-
-  <main id="main">
-    <div data-include="sections/about.html"></div>
-    <div data-include="sections/facts.html"></div>
-    <div data-include="sections/skills.html"></div>
-    <div data-include="sections/resume.html"></div>
-    <div data-include="sections/portfolio.html"></div>
-    <div data-include="sections/blog.html"></div>
-    <div data-include="sections/contact.html"></div>
-  </main>
-
-  <div data-include="sections/footer.html"></div>
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/js/includes.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
+    <!-- Apply the saved (or system) theme before first paint to avoid a flash -->
+    <script>
+      ;(function () {
+        var theme = 'dark'
+        try {
+          var saved = localStorage.getItem('theme')
+          if (saved === 'light' || saved === 'dark') theme = saved
+          else if (window.matchMedia('(prefers-color-scheme: light)').matches) theme = 'light'
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

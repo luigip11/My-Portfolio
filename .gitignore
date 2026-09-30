@@ -1,2 +1,10 @@
-
 slides.html
+
+# Local Claude Code skills
+.claude/skills/
+
+# Build
+node_modules/
+dist/
+*.local
+.DS_Store

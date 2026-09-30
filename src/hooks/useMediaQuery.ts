@@ -1,0 +1,21 @@
+import { useCallback, useSyncExternalStore } from 'react'
+
+export function useMediaQuery(query: string) {
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const mql = window.matchMedia(query)
+      mql.addEventListener('change', onChange)
+      return () => mql.removeEventListener('change', onChange)
+    },
+    [query],
+  )
+
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(query).matches,
+    () => false,
+  )
+}
+
+/** Mouse/trackpad: enables hover-only effects (magnetic, tilt, spotlight). */
+export const useFinePointer = () => useMediaQuery('(hover: hover) and (pointer: fine)')
