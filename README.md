@@ -12,12 +12,15 @@ React 19 · TypeScript · Vite · Tailwind CSS v4 · Motion · Lenis
 
 ## Development
 
+Use Node.js 26 (see `.nvmrc`). Install the versions recorded in the lockfile:
+
 ```bash
-npm install
+npm ci
 npm run dev       # http://localhost:5173/My-Portfolio/
 npm run build     # type-check + production build in dist/
 npm run preview   # serve the production build
 npm run lint
+npm audit --audit-level=low
 ```
 
 Content lives in `src/data/` (profile, skills, CV, projects, blog, contacts): update those files to change the site text without touching components.
@@ -25,3 +28,5 @@ Content lives in `src/data/` (profile, skills, CV, projects, blog, contacts): up
 ## Deploy
 
 Every push to `main` builds the site and publishes it to GitHub Pages via `.github/workflows/deploy.yml` (Pages source: **GitHub Actions**).
+
+The workflow checks dependency advisories, lint, and the production build before deployment. Dependabot checks npm packages and pinned GitHub Actions weekly.
