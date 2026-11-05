@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">GamePanel cover</title>
+  <desc id="desc">Copertina illustrata per GamePanel, app Windows per libreria giochi e configurazioni grafiche.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06080b"/>
+      <stop offset="55%" stop-color="#14261b"/>
+      <stop offset="100%" stop-color="#4fae3c"/>
+    </linearGradient>
+    <linearGradient id="c1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7b5cff"/><stop offset="100%" stop-color="#2a1b6b"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff9d4d"/><stop offset="100%" stop-color="#7a2a12"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3fd0e0"/><stop offset="100%" stop-color="#0d4a5a"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff5d8f"/><stop offset="100%" stop-color="#5e1230"/></linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="1060" cy="150" r="120" fill="#ffffff" fill-opacity=".07"/>
+  <circle cx="140" cy="700" r="140" fill="#ffffff" fill-opacity=".05"/>
+  <rect x="690" y="106" width="440" height="352" rx="22" fill="#0b0f14" stroke="#9be15d" stroke-opacity=".35" stroke-width="2"/>
+  <rect x="712" y="124" width="22" height="22" rx="6" fill="#9be15d"/>
+  <rect x="744" y="130" width="86" height="10" rx="5" fill="#ffffff" fill-opacity=".35"/>
+  <path d="M1052 135h14" stroke="#ffffff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+  <rect x="1076" y="128" width="14" height="14" rx="2" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M1100 128l13 13M1113 128l-13 13" stroke="#ffffff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M690 160h440" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/>
+  <rect x="708" y="180" width="28" height="28" rx="8" fill="#9be15d"/>
+  <rect x="708" y="222" width="28" height="28" rx="8" fill="#ffffff" fill-opacity=".14"/>
+  <rect x="708" y="264" width="28" height="28" rx="8" fill="#ffffff" fill-opacity=".14"/>
+  <rect x="708" y="306" width="28" height="28" rx="8" fill="#ffffff" fill-opacity=".14"/>
+  <path d="M754 160v298" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/>
+  <rect x="772" y="178" width="88" height="120" rx="12" fill="url(#c1)"/>
+  <rect x="784" y="270" width="52" height="10" rx="5" fill="#ffffff" fill-opacity=".75"/>
+  <circle cx="802" cy="222" r="16" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="874" y="178" width="88" height="120" rx="12" fill="url(#c2)"/>
+  <rect x="886" y="270" width="52" height="10" rx="5" fill="#ffffff" fill-opacity=".75"/>
+  <circle cx="904" cy="222" r="16" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="772" y="318" width="88" height="120" rx="12" fill="url(#c3)"/>
+  <rect x="784" y="410" width="52" height="10" rx="5" fill="#ffffff" fill-opacity=".75"/>
+  <circle cx="802" cy="362" r="16" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="874" y="318" width="88" height="120" rx="12" fill="url(#c4)"/>
+  <rect x="886" y="410" width="52" height="10" rx="5" fill="#ffffff" fill-opacity=".75"/>
+  <circle cx="904" cy="362" r="16" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="767" y="173" width="98" height="130" rx="15" fill="none" stroke="#9be15d" stroke-width="4"/>
+  <rect x="978" y="178" width="134" height="260" rx="14" fill="#151c25"/>
+  <rect x="994" y="196" width="62" height="10" rx="5" fill="#ffffff" fill-opacity=".45"/>
+  <rect x="994" y="222" width="70" height="10" rx="5" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="1060" y="216" width="40" height="22" rx="11" fill="#9be15d"/>
+  <circle cx="1089" cy="227" r="8" fill="#0b0f14"/>
+  <rect x="994" y="256" width="56" height="10" rx="5" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="1060" y="250" width="40" height="22" rx="11" fill="#9be15d"/>
+  <circle cx="1089" cy="261" r="8" fill="#0b0f14"/>
+  <rect x="994" y="290" width="64" height="10" rx="5" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="1060" y="284" width="40" height="22" rx="11" fill="#ffffff" fill-opacity=".18"/>
+  <circle cx="1071" cy="295" r="8" fill="#ffffff" fill-opacity=".7"/>
+  <rect x="994" y="324" width="48" height="10" rx="5" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="994" y="348" width="102" height="6" rx="3" fill="#ffffff" fill-opacity=".18"/>
+  <rect x="994" y="348" width="66" height="6" rx="3" fill="#9be15d"/>
+  <circle cx="1060" cy="351" r="9" fill="#ffffff"/>
+  <rect x="994" y="384" width="102" height="38" rx="19" fill="#9be15d"/>
+  <path d="M1036 393l16 10-16 10z" fill="#0b0f14"/>
+  <text x="92" y="164" fill="#c8f5a6" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="5">APP DESKTOP WINDOWS</text>
+  <text x="92" y="284" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">GamePanel</text>
+  <text x="92" y="360" fill="#e0f8cf" font-family="Arial, Helvetica, sans-serif" font-size="30">Giochi, DLSS e ReShade in un'unica app</text>
+  <rect x="92" y="446" width="112" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="148" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">DLSS</text>
+  <rect x="222" y="446" width="150" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="297" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">ReShade</text>
+  <rect x="390" y="446" width="138" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="459" y="481" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Backup</text>
+</svg>

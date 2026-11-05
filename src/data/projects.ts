@@ -1,14 +1,19 @@
 import dabliuNotesCover from '../assets/img/portfolio/dabliu-notes-cover.svg'
+import furnitureConfiguratorCover from '../assets/img/portfolio/furniture-configurator-cover.svg'
+import gamePanelCover from '../assets/img/portfolio/gamepanel-cover.svg'
 import gtFleet365Cover from '../assets/img/portfolio/gt-fleet-365-cover.svg'
 import gtFleetWebCover from '../assets/img/portfolio/gt-fleet-web-cover.svg'
 import mySarmaCover from '../assets/img/portfolio/mysarma-welfare-cover.svg'
 
 export type ProjectCategory = 'app' | 'web'
 
-export type ProjectLinkKind = 'google-play' | 'app-store' | 'site' | 'product'
+export type ProjectGroup = 'work' | 'personal'
+
+export type ProjectLinkKind = 'google-play' | 'app-store' | 'site' | 'product' | 'github'
 
 export type Project = {
   id: string
+  group: ProjectGroup
   title: string
   kind: string
   category: ProjectCategory
@@ -20,7 +25,7 @@ export type Project = {
 }
 
 export const portfolioIntro =
-  'Una selezione di progetti mobile e web collegati al mio percorso professionale.'
+  'Una selezione di progetti mobile, web e desktop: quelli realizzati nel mio percorso professionale e quelli personali che sviluppo in autonomia.'
 
 export const projectFilters: { value: ProjectCategory | 'all'; label: string }[] = [
   { value: 'all', label: 'Tutti' },
@@ -28,9 +33,23 @@ export const projectFilters: { value: ProjectCategory | 'all'; label: string }[]
   { value: 'web', label: 'Web' },
 ]
 
+export const projectGroups: { value: ProjectGroup; title: string; description: string }[] = [
+  {
+    value: 'work',
+    title: 'Progetti lavorativi',
+    description: 'App e piattaforme realizzate per aziende e clienti.',
+  },
+  {
+    value: 'personal',
+    title: 'Progetti personali',
+    description: "Idee in cui credo, che porto avanti in autonomia dall'interfaccia al codice.",
+  },
+]
+
 export const projects: Project[] = [
   {
     id: 'dabliu-notes',
+    group: 'work',
     title: 'Dabliu Notes',
     kind: 'App mobile',
     category: 'app',
@@ -54,6 +73,7 @@ export const projects: Project[] = [
   },
   {
     id: 'mysarma-welfare',
+    group: 'work',
     title: 'MySarma Welfare',
     kind: 'App mobile',
     category: 'app',
@@ -72,6 +92,7 @@ export const projects: Project[] = [
   },
   {
     id: 'gt-fleet-365',
+    group: 'work',
     title: 'GT Fleet 365',
     kind: 'App mobile',
     category: 'app',
@@ -95,6 +116,7 @@ export const projects: Project[] = [
   },
   {
     id: 'gt-fleet-365-web',
+    group: 'work',
     title: 'GT Fleet 365 Web',
     kind: 'Piattaforma web',
     category: 'web',
@@ -107,5 +129,34 @@ export const projects: Project[] = [
       { kind: 'site', label: 'Apri sito', href: 'https://macnil.gtfleet.net/' },
       { kind: 'product', label: 'Scheda prodotto', href: 'https://macnil.it/brand/gt-fleet-365/' },
     ],
+  },
+  {
+    id: 'furniture-configurator',
+    group: 'personal',
+    title: 'Furniture Configurator',
+    kind: 'Web app 3D',
+    category: 'web',
+    cover: furnitureConfiguratorCover,
+    coverAlt: 'Cover progetto Furniture Configurator',
+    description:
+      'MVP di un configuratore 3D per arredi modulari: composizione nella scena, misure e ante personalizzabili, riepilogo prezzi e richiesta di preventivo, con pannello admin per il catalogo.',
+    tags: ['3D', 'Next.js', 'Three.js', 'Supabase'],
+    links: [
+      { kind: 'site', label: 'Apri demo', href: 'https://furniture-configurator-ten.vercel.app/' },
+      { kind: 'github', label: 'GitHub', href: 'https://github.com/luigip11/furniture-configurator-mvp' },
+    ],
+  },
+  {
+    id: 'gamepanel',
+    group: 'personal',
+    title: 'GamePanel',
+    kind: 'App desktop',
+    category: 'app',
+    cover: gamePanelCover,
+    coverAlt: 'Cover progetto GamePanel',
+    description:
+      'App Windows che riunisce libreria giochi e configurazioni grafiche: DLSS per le copie RTX Remix, strumenti HDR e ReShade, profili di risoluzione e pacchetti grafici con backup e ripristino. In fase alpha.',
+    tags: ['Windows', 'WPF', 'DLSS', 'ReShade'],
+    links: [{ kind: 'github', label: 'GitHub', href: 'https://github.com/luigip11/GamePanel' }],
   },
 ]

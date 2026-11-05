@@ -1,11 +1,12 @@
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion, useSpring } from 'motion/react'
 import { useState, type PointerEvent, type Ref } from 'react'
 import type { IconType } from 'react-icons'
-import { LuArrowUpRight, LuGlobe } from 'react-icons/lu'
+import { LuArrowUpRight, LuGithub, LuGlobe } from 'react-icons/lu'
 import { SiAppstore, SiGoogleplay } from 'react-icons/si'
 import {
   portfolioIntro,
   projectFilters,
+  projectGroups,
   projects,
   type Project,
   type ProjectCategory,
@@ -24,6 +25,7 @@ const linkIcons: Record<ProjectLinkKind, IconType> = {
   'app-store': SiAppstore,
   site: LuGlobe,
   product: LuArrowUpRight,
+  github: LuGithub,
 }
 
 const countFor = (filter: Filter) =>
@@ -75,13 +77,35 @@ export function Portfolio() {
       </p>
       <Reveal delay={0.1}>
         <LayoutGroup>
-          <motion.ul layout className="mt-10 grid gap-6 md:grid-cols-2">
-            <AnimatePresence mode="popLayout" initial={false}>
-              {visible.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </AnimatePresence>
-          </motion.ul>
+          <div className="mt-10 space-y-16 md:mt-12 md:space-y-20">
+            {projectGroups.map((group) => {
+              const items = visible.filter((project) => project.group === group.value)
+              if (items.length === 0) return null
+              const titleId = `portfolio-${group.value}-title`
+
+              return (
+                <motion.div key={group.value} layout="position" role="group" aria-labelledby={titleId}>
+                  <div className="flex items-center gap-4">
+                    <h3 id={titleId} className="text-2xl font-semibold tracking-tight md:text-3xl">
+                      {group.title}
+                    </h3>
+                    <span className="font-mono text-sm text-accent">
+                      {String(items.length).padStart(2, '0')}
+                    </span>
+                    <span aria-hidden="true" className="h-px flex-1 bg-border" />
+                  </div>
+                  <p className="mt-2 text-muted">{group.description}</p>
+                  <motion.ul layout className="mt-8 grid gap-6 md:grid-cols-2">
+                    <AnimatePresence mode="popLayout" initial={false}>
+                      {items.map((project) => (
+                        <ProjectCard key={project.id} project={project} />
+                      ))}
+                    </AnimatePresence>
+                  </motion.ul>
+                </motion.div>
+              )
+            })}
+          </div>
         </LayoutGroup>
       </Reveal>
     </Section>
@@ -139,7 +163,7 @@ function ProjectCard({ project, ref }: { project: Project; ref?: Ref<HTMLLIEleme
             </div>
             <div className="flex flex-1 flex-col p-6 md:p-7">
               <span className="font-mono text-xs tracking-widest text-accent uppercase">{project.kind}</span>
-              <h3 className="mt-2 text-2xl font-semibold">{project.title}</h3>
+              <h4 className="mt-2 text-2xl font-semibold">{project.title}</h4>
               <p className="mt-3 text-muted">{project.description}</p>
               <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tag">
                 {project.tags.map((tag) => (

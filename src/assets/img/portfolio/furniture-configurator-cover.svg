@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Furniture Configurator cover</title>
+  <desc id="desc">Copertina illustrata per il configuratore 3D di arredi modulari.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#120b07"/>
+      <stop offset="55%" stop-color="#4a2b17"/>
+      <stop offset="100%" stop-color="#d4843f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="140" cy="700" r="140" fill="#ffffff" fill-opacity=".05"/>
+  <polygon points="862.7,342 1131.1,497 1131.1,272 862.7,117" fill="#ffffff" fill-opacity=".06" stroke="#ffd9b3" stroke-opacity=".22" stroke-width="2"/>
+  <polygon points="862.7,342 1131.1,497 988.3,579.5 719.8,424.5" fill="#ffffff" fill-opacity=".05" stroke="#ffd9b3" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="897.3" y1="362" x2="754.4" y2="444.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="932" y1="382" x2="789.1" y2="464.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="966.6" y1="402" x2="823.7" y2="484.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="1001.2" y1="422" x2="858.3" y2="504.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="1035.9" y1="442" x2="893" y2="524.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="1070.5" y1="462" x2="927.6" y2="544.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="1105.2" y1="482" x2="962.3" y2="564.5" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="828" y1="362" x2="1096.5" y2="517" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="793.4" y1="382" x2="1061.9" y2="537" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="758.8" y1="402" x2="1027.2" y2="557" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <line x1="724.1" y1="422" x2="992.6" y2="577" stroke="#ffd9b3" stroke-opacity=".1" stroke-width="1.5"/>
+  <polygon points="883.5,258 1039.3,348 1039.3,298 883.5,208" fill="#efe2cf" stroke="#8a6a46" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="1070.5,330 1039.3,348 1039.3,298 1070.5,280" fill="#c9b291" stroke="#8a6a46" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="914.6,190 1070.5,280 1039.3,298 883.5,208" fill="#fbf3e8" stroke="#8a6a46" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="887.8,255.5 957.1,295.5 957.1,255.5 887.8,215.5" fill="#f6ecdd" stroke="#c8ae8a" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="937.2" y1="273" x2="952.7" y2="282" stroke="#6b4a2c" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="965.7,300.5 1035,340.5 1035,300.5 965.7,260.5" fill="#f6ecdd" stroke="#c8ae8a" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="970.1" y1="292" x2="985.7" y2="301" stroke="#6b4a2c" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="826.3,383 1042.8,508 1042.8,424 826.3,299" fill="#e2b98a" stroke="#6e4423" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="1096.5,477 1042.8,508 1042.8,424 1096.5,393" fill="#a8723f" stroke="#6e4423" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="880,268 1096.5,393 1042.8,424 826.3,299" fill="#f2d6b3" stroke="#6e4423" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="826.3,383 1042.8,508 1042.8,498 826.3,373" fill="#7a4b26"/>
+  <polygon points="831.5,370 893.3,405.7 893.3,343.7 831.5,308" fill="#ecc89c" stroke="#b98450" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="873.4" y1="342.2" x2="888.9" y2="351.2" stroke="#5a3519" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="903.7,411.7 965.4,447.3 965.4,385.3 903.7,349.7" fill="#ecc89c" stroke="#b98450" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="908" y1="362.2" x2="923.6" y2="371.2" stroke="#5a3519" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="975.8,453.3 1037.6,489 1037.6,427 975.8,391.3" fill="#ecc89c" stroke="#b98450" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="1017.7" y1="425.5" x2="1033.3" y2="434.5" stroke="#5a3519" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="903.7,411.7 965.4,447.3 965.4,385.3 903.7,349.7" fill="none" stroke="#ffb45e" stroke-width="5" stroke-linejoin="round"/>
+  <line x1="961.4" y1="346" x2="1001.2" y2="369" stroke="#ff7d6b" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="1001.2" cy="369" r="7" fill="#ff7d6b"/>
+  <line x1="961.4" y1="346" x2="921.6" y2="369" stroke="#86e08f" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="921.6" cy="369" r="7" fill="#86e08f"/>
+  <line x1="961.4" y1="346" x2="961.4" y2="294" stroke="#6cbcff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="961.4" cy="294" r="7" fill="#6cbcff"/>
+  <circle cx="961.4" cy="346" r="8" fill="#ffffff"/>
+  <line x1="776.1" y1="412" x2="992.6" y2="537" stroke="#ffe2c2" stroke-opacity=".75" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <circle cx="776.1" cy="412" r="5" fill="#ffe2c2"/>
+  <circle cx="992.6" cy="537" r="5" fill="#ffe2c2"/>
+  <rect x="836.3" y="456.5" width="96" height="36" rx="18" fill="#1a100a" stroke="#ffb45e" stroke-opacity=".6"/>
+  <text x="884.3" y="481.5" text-anchor="middle" fill="#ffe2c2" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">250 cm</text>
+  <rect x="940" y="78" width="184" height="58" rx="29" fill="#1a100a" fill-opacity=".72" stroke="#ffd9b3" stroke-opacity=".25"/>
+  <circle cx="972" cy="107" r="14" fill="#f2d6b3" stroke="#ffb45e" stroke-width="4"/>
+  <circle cx="1012" cy="107" r="14" fill="#a8723f" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="1052" cy="107" r="14" fill="#efe2cf" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="1092" cy="107" r="14" fill="#3d2a1d" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+  <text x="92" y="150" fill="#ffd2a6" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="5">CONFIGURATORE 3D</text>
+  <text x="92" y="250" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700">Furniture</text>
+  <text x="92" y="330" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700">Configurator</text>
+  <text x="92" y="400" fill="#ffe6cc" font-family="Arial, Helvetica, sans-serif" font-size="30">Componi arredi modulari in 3D</text>
+  <rect x="92" y="460" width="163" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="173.5" y="495" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Scena 3D</text>
+  <rect x="273" y="460" width="138" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="342" y="495" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Misure</text>
+  <rect x="429" y="460" width="188" height="54" rx="27" fill="#ffffff" fill-opacity=".13"/>
+  <text x="523" y="495" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">Preventivo</text>
+</svg>
