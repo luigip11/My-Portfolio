@@ -15,6 +15,14 @@ updates:
         patterns:
           - tailwindcss
           - "@tailwindcss/*"
+      # Everything else: one weekly PR for minor/patch bumps.
+      # Major bumps still arrive as separate PRs so breaking changes get reviewed alone.
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
   - package-ecosystem: github-actions
     directory: /
     schedule:
