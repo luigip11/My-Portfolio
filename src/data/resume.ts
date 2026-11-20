@@ -67,9 +67,9 @@ export const experience: ExperienceItem[] = [
     org: 'Wacebo Europe, Locorotondo',
     current: true,
     bullets: [
-      "Sviluppatore e tester dell'area sviluppo.",
-      'Procedure di sviluppo tramite metodologia Agile.',
-      'Collaborazione nella definizione del design.',
+      "Progetto l’esperienza utente tramite UX/UI Design e sviluppo di applicazioni mobile cross-platform.",
+      "Creo flussi di lavoro con l'AI, docs, skills, code-review e test.",
+      'Rilascio sugli store iOS e Android.',
     ],
   },
   {
